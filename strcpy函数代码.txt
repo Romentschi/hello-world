@@ -23,7 +23,7 @@ int main()
 {
 	const char* src = "hello";
 	int len = strlen(src);
-	char* str = (char*)malloc(sizeof(char)*(len+1));//len+1是因为字符串后面有个'\0'
+	char* str = (char*)malloc(sizeof(char)*(len+1));
 	assert(str != NULL);
 	my_strcpy(str, src);
 	printf("%s\n", str);
