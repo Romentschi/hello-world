@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include <string.h>
+#include<stdlib.h>
+#include<assert.h>
+//字符串复制，将scr内容赋值到str内
+void my_strcpy(char* str, const char* src) {
+	int i;
+	for (i = 0; i < strlen(src); i++)
+	{
+		str[i] = src[i];//*(str+i)也行
+	}
+	str[i] = '\0';
+
+	{
+		*str = *src;
+		str++;
+		src++;
+	}*/
+ 
+}
+ 
+int main()
+{
+	const char* src = "hello";
+	int len = strlen(src);
+	char* str = (char*)malloc(sizeof(char)*(len+1));//len+1是因为字符串后面有个'\0'
+	assert(str != NULL);
+	my_strcpy(str, src);
+	printf("%s\n", str);
+	free(str);
+	return 0;
+}
